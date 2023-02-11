@@ -3,6 +3,7 @@ package com.esprit.alternance.kaddem.models;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "Etudiant")
@@ -15,5 +16,11 @@ public class Etudiant implements Serializable {
     private String nomE;
     @Enumerated(EnumType.STRING)
     private Option op;
-// Constructeur et accesseurs (getters) et mutateurs (setters)
+
+    @OneToMany(mappedBy = "etudiant")
+    private List<Contrat> contrats;
+    @ManyToOne
+    private Department department;
+    @ManyToMany(mappedBy = "etudiants")
+    private List<Equipe> equipes;
 }

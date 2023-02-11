@@ -19,5 +19,6 @@ public class Contrat implements Serializable {
     private Specialite specialite;
     private Boolean archive;
     private Integer montantContrat;
-
+    @ManyToOne
+    private Etudiant etudiant;
 }
