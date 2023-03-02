@@ -16,9 +16,9 @@ public class Contrat implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_contract", nullable = false)
-    private Long idContract;
+    private Integer idContract;
 
-  @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.DATE)
     private Date dateDebut;
     @Temporal(TemporalType.DATE)
     private Date dateFin;

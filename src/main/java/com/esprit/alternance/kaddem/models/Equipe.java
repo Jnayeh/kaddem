@@ -12,18 +12,17 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Equipe implements Serializable
-{
+public class Equipe implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idEquipe", nullable = false)
-    private Long idEquipe;
+    private Integer idEquipe;
 
     private String nameEquipe;
     @Enumerated(EnumType.STRING)
     private Niveau niveau;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private DetailEquipe detailEquipe;
     @ManyToMany
     private Set<Etudiant> etudiants;

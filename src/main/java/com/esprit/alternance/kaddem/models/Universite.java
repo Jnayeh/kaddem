@@ -16,10 +16,10 @@ public class Universite implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUniv", nullable = false)
-    private Long idUnive;
+    private Integer idUnive;
     private String nomUniversite;
 
-    @OneToMany(mappedBy = "university")
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Department> departments;
 
 }

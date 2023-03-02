@@ -1,5 +1,6 @@
 package com.esprit.alternance.kaddem.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,12 +17,14 @@ public class Department implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idDepartment", nullable = false)
-    private Long idDepartment;
+    private Integer idDepartment;
 
     private String nameDepartment;
 
     @OneToMany(mappedBy = "department")
-    private List<Etudiant> etudiants1;
-    @ManyToOne (cascade = CascadeType.ALL)
-    private Universite university;
+    //@JsonBackReference
+    private List<Etudiant> etudiants;
+    //@ManyToOne
+    //@JsonIgnore
+    //private Universite university;
 }

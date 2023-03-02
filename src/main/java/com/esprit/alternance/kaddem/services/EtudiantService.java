@@ -1,9 +1,9 @@
 package com.esprit.alternance.kaddem.services;
 
 import com.esprit.alternance.kaddem.models.Etudiant;
-import com.esprit.alternance.kaddem.models.Niveau;
 
 import java.util.List;
+
 
 public interface EtudiantService {
 
@@ -14,7 +14,12 @@ public interface EtudiantService {
     Etudiant updateEtudiant(Etudiant e);
 
     Etudiant retrieveEtudiant(Integer idEtudiant);
-    
-    public List<Etudiant> findByDepartmentIdDepartment(Long idDepartment);
-    public List<Etudiant> findByequipesNiveauSenior();
+
+    List<Etudiant> findByDepartmentIdDepartment(Integer idDepartment);
+
+    List<Etudiant> findByequipesNiveauSenior();
+
+    void assignEtudiantToDepartement(Integer etudiantId, Integer departementId);
+
+    void deleteEtudiant(Integer id);
 }

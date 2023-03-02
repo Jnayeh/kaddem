@@ -1,9 +1,9 @@
 package com.esprit.alternance.kaddem.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -27,7 +27,9 @@ public class Etudiant implements Serializable {
     @OneToMany(mappedBy = "etudiant")
     private List<Contrat> contrats;
     @ManyToOne
+    @JsonIgnoreProperties({ "etudiants" })
     private Department department;
     @ManyToMany(mappedBy = "etudiants")
+    @JsonIgnoreProperties({ "etudiants" })
     private List<Equipe> equipes;
 }

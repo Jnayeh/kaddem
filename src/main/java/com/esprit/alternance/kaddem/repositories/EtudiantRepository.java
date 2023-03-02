@@ -2,12 +2,14 @@ package com.esprit.alternance.kaddem.repositories;
 
 import com.esprit.alternance.kaddem.models.Etudiant;
 import com.esprit.alternance.kaddem.models.Niveau;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+@Repository
+public interface EtudiantRepository extends JpaRepository<Etudiant, Integer> {
+    List<Etudiant> findByDepartmentIdDepartment(Integer idDepartment);
 
-public interface EtudiantRepository extends JpaRepository<Etudiant,Integer> {
-    public List<Etudiant> findByDepartmentIdDepartment(Long idDepartment);
-    public List<Etudiant> findByequipesNiveau(Niveau n);
+    List<Etudiant> findByequipesNiveau(Niveau n);
 }

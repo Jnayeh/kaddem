@@ -4,6 +4,7 @@ import com.esprit.alternance.kaddem.models.Equipe;
 
 import java.util.List;
 
+
 public interface EquipeService {
 
     List<Equipe> retrieveAllEquipes();
@@ -13,4 +14,6 @@ public interface EquipeService {
     Equipe updateEquipe(Equipe e);
 
     Equipe retrieveEquipe(Integer idEquipe);
+
+    void deleteEquipe(Integer id);
 }
